@@ -122,6 +122,7 @@ function Dashboard() {
                 </div>
               </Link>
             ))}
+            <p>No Blogs were Uploaded.</p>
         </div>
       </div>
     </div>

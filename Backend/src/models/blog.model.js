@@ -9,6 +9,7 @@ const blogSchema = new Schema({
     type: String,
     required: true,
     enum: [
+      "God",
       "Technology",
       "Health",
       "Finance",
