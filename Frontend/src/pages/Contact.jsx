@@ -25,7 +25,7 @@ function Contact() {
       };
 
       const response = await axios.post(
-        `http://localhost:5000/api/v1/message/send`,
+        `${import.meta.env.VITE_API_URL}/message/send`,
         messageData,
         { withCredentials: true }
       );

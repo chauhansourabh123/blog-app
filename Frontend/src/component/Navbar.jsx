@@ -45,7 +45,7 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      await axios.get(`http://localhost:5000/api/v1/user/logout`, {
+      await axios.get(`${import.meta.env.VITE_API_URL}/user/logout`, {
         withCredentials: true,
       });
 

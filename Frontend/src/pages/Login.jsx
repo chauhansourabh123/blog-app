@@ -23,18 +23,19 @@ function Login() {
     };
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/v1/user/login`,
+        `${import.meta.env.VITE_API_URL}/user/login`,
         newData,
         { withCredentials: true }
       );
       setLoggedInUser(res.data.data);
-      toast.success("Login successfully", {autoClose: 1000});
+      toast.success("Login successfully", { autoClose: 1000 });
       setTimeout(() => {
         navigate("/");
       }, 1500);
       reset();
     } catch (error) {
-      toast.error("Email or Password is incorrect", {autoClose: 1200});
+      console.error("Login error:", error); // Log the error for debugging
+      toast.error("Email or Password is incorrect", { autoClose: 1200 });
     }
   };
 

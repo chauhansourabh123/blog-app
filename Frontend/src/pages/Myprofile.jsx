@@ -6,7 +6,7 @@ function Myprofile() {
 
   const handleDelte = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/user/delete`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/user/delete`, {
         withCredentials: true,
       });
       setLoggedInUser(null);

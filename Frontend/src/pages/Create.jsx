@@ -24,7 +24,7 @@ function Create() {
       formData.append("blogPost", data.blogPost[0]);
 
       const res = await axios.post(
-        `http://localhost:5000/api/v1/blog/create`,
+        `${import.meta.env.VITE_API_URL}/blog/create`,
         formData,
         {
           headers: {

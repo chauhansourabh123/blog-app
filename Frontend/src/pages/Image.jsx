@@ -12,7 +12,7 @@ function Image() {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/v1/blog/get-blog/${id}`, { withCredentials: true });
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/blog/get-blog/${id}`, { withCredentials: true });
         setBlog(res.data.data);
       } catch (error) {
         setError(error.message); 

@@ -22,7 +22,7 @@ function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      await axios.get(`http://localhost:5000/api/v1/user/logout`, {
+      await axios.get(`${import.meta.env.VITE_API_URL}/user/logout`, {
         withCredentials: true,
       });
       setLoggedInUser(null);
@@ -39,7 +39,7 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/blog/delete/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/blog/delete/${id}`, {
         withCredentials: true,
       });
       toast("Blog deleted", { autoClose: 1500 });

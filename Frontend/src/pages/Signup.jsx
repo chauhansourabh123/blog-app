@@ -28,7 +28,7 @@ function Signup() {
     try {
       setIsLoading(true);
       const res = await axios.post(
-        `http://localhost:5000/api/v1/user/signup`,
+        `${import.meta.env.VITE_API_URL}/user/signup`,
         formData,
         {
           headers: {

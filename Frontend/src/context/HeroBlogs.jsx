@@ -9,7 +9,7 @@ const useHeroBlogs = () => {
     const getBlogs = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5000/api/v1/blog/get-blogs`, {withCredentials: true});
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/blog/get-blogs`, {withCredentials: true});
 
         setHeroBlogs(res.data.data);
       } catch (error) {

@@ -8,7 +8,7 @@ function useUserBlog() {
     const fetchMyBlogs = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/v1/blog/my-blogs`,
+          `${import.meta.env.VITE_API_URL}/blog/my-blogs`,
           { withCredentials: true }
         );
         setMyblogs(res.data.data);
